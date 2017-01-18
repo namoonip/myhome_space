@@ -1,6 +1,6 @@
-<%@page import="todo.LoginVO"%>
-<%@page import="todo.LoginDAO"%>
 <%@page import="util.MD5"%>
+<%@page import="vo.UserVO"%>
+<%@page import="dao.UserDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" session="false"%>
     
@@ -9,23 +9,25 @@
  	String id = request.getParameter("id");
  	String pwd = request.getParameter("pwd");
  	
- 	LoginDAO dao = new LoginDAO();
- 	LoginVO user = dao.loginCheckById(id);
+ 	UserDAO dao = new UserDAO();
+ 	UserVO user = dao.getUserById(id);
  	
  	if (user == null) {
- 		response.sendRedirect("loginform.jsp?err=fail");
+ 		response.sendRedirect("main.jsp?err=fail");
  		return;
  	}
  	
  	String secuPwd = MD5.hash(pwd);
  	if (secuPwd.equals(user.getPwd())) {
  		HttpSession session = request.getSession(true);
- 		session.setAttribute("LOGINED_USER", user);
+ 		session.setAttribute("LOGIN_USER", user);
+ 		response.sendRedirect("list.jsp?pno=1");
+ 		return;
  		
- 		response.sendRedirect("../index.jsp");
  	} else {
- 		response.sendRedirect("loginform.jsp?err=fail");
+ 		
+ 		response.sendRedirect("main.jsp?err=fail");
  		return;
  	}
- 
+
  %>

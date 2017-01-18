@@ -1,24 +1,26 @@
-package todo;
+package vo;
 
 import java.sql.Date;
 
-public class LoginVO {
+public class UserVO {
 	private String id;
 	private String pwd;
 	private String name;
-	private String Phone;
+	private String phone;
 	private String addr;
 	private int point;
 	private Date regdate;
 	
-	public LoginVO() {
+	public UserVO() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
-	public LoginVO(String id, String pwd, String name, String phone, String addr, int point, Date regdate) {
+	public UserVO(String id, String pwd, String name, String phone, String addr, int point, Date regdate) {
 		super();
 		this.id = id;
 		this.pwd = pwd;
 		this.name = name;
-		Phone = phone;
+		this.phone = phone;
 		this.addr = addr;
 		this.point = point;
 		this.regdate = regdate;
@@ -43,10 +45,10 @@ public class LoginVO {
 		this.name = name;
 	}
 	public String getPhone() {
-		return Phone;
+		return phone;
 	}
 	public void setPhone(String phone) {
-		Phone = phone;
+		this.phone = phone;
 	}
 	public String getAddr() {
 		return addr;
@@ -67,4 +69,9 @@ public class LoginVO {
 		this.regdate = regdate;
 	}
 	
+	@Override
+	public String toString() {
+		return "UserVO [id=" + id + ", pwd=" + pwd + ", name=" + name + ", phone=" + phone + ", addr=" + addr
+				+ ", point=" + point + ", regdate=" + regdate + "]";
+	}
 }

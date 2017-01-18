@@ -1,6 +1,5 @@
 package puzzle;
 
-import java.awt.event.*;
 import java.util.*;
 
 import javafx.animation.*;

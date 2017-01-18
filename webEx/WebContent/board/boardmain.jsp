@@ -12,7 +12,7 @@
 </head>
 <body>
 	<h1>자유 게시판</h1>
-	<table width="50%" border="1" >
+	<table border="1" >
 		<tr>
 			<th>번호</th>
 			<th>제목</th>

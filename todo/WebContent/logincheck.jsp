@@ -7,13 +7,13 @@
 	HttpSession session = request.getSession(false);
 	
 	if (session == null) {
-		response.sendRedirect("loginform.jsp?err=deny");
+		response.sendRedirect("main.jsp?err=deny");
 		return;
 	}
 	
-	UserVO user = (UserVO) session.getAttribute("LOGINED_USER");
+	UserVO user = (UserVO) session.getAttribute("LOGIN_USER");
 	if(user == null) {
-		response.sendRedirect("loginform.jsp?err=deny");
+		response.sendRedirect("main.jsp?err=deny");
 		return;
 	}
 %>

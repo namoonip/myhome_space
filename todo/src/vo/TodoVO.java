@@ -1,4 +1,4 @@
-package todo;
+package vo;
 
 public class TodoVO {
 	private int no;
@@ -8,12 +8,15 @@ public class TodoVO {
 	private String location;
 	private String day;
 	private String completed;
+	private String userId;
+	
 	public TodoVO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
 	public TodoVO(int no, String category, String title, String description, String location, String day,
-			String completed) {
+			String completed, String userId) {
 		super();
 		this.no = no;
 		this.category = category;
@@ -22,7 +25,9 @@ public class TodoVO {
 		this.location = location;
 		this.day = day;
 		this.completed = completed;
+		this.userId = userId;
 	}
+
 	public int getNo() {
 		return no;
 	}
@@ -65,5 +70,14 @@ public class TodoVO {
 	public void setCompleted(String completed) {
 		this.completed = completed;
 	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+	
 	
 }
